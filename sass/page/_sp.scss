@@ -1,0 +1,639 @@
+.year_month_block {
+    font-size: 2em;
+    text-align: center;
+    margin: 20px 40px;
+    font-weight: 500;
+    @media(max-width: 480px) {
+        font-size: 1.75em;
+    }
+    @media(max-width: 380px) {
+        font-size: 1.5em;
+    }
+    .year_month {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        span {
+            color: #ee4f4b;
+            padding: 0 10px;
+            font-family: 'Merriweather', serif;
+            font-weight: 400;
+            font-size: 1.5em;
+            @media(max-width: 380px) {
+                padding: 0 5px;
+            }
+        }
+    }
+    .prev_btn, .next_btn {
+        display: inline-block;
+        vertical-align: middle;
+        a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: #666;
+            line-height: 40px;
+            border-radius: 50%;
+            &:hover {
+                background-color: #000;
+            }
+            @media(max-width: 380px) {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+}
+.calendar_explain {
+    background-image: url('../images/icon_star.png');
+    background-position: 0 2px;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+.people_sort {
+    background-color: #fff;
+    padding: 15px 20px 7px;
+    box-shadow: 0 0 2px #ccc;
+    overflow: hidden;
+    margin-bottom: 20px;
+    text-align: center;
+    // @include screen('mobile'){
+    //  padding: 15px 100px 7px;
+    // }
+    // @include screen('xs_mobile'){
+    //  padding: 15px 30px 7px;
+    // }
+    ul {
+        margin: 0 auto;
+        padding: 0;
+        width: 80%;
+        list-style: none;
+        text-align: center;
+        @include screen('mobile') {
+            width: 90%;
+        }
+        @media(max-width:590px) {
+            width: 95%;
+        }
+        li {
+            display: inline-block;
+            ;
+            width: 105px;
+            margin: 0 4px 8px;
+            padding-left: 20px;
+            position: relative;
+            &:before {
+                content: '';
+                width: 12px;
+                height: 12px;
+                position: absolute;
+                left: 0;
+                top: 5px;
+                background-color: #666;
+            }
+            &.no01 {
+                &:before {
+                    background-color: #00a18b;
+                }
+            }
+            &.no02 {
+                &:before {
+                    background-color: #ff6e35;
+                }
+            }
+            &.no03 {
+                &:before {
+                    background-color: #006ccf;
+                }
+            }
+            &.no04 {
+                &:before {
+                    background-color: #e50022;
+                }
+            }
+            &.no05 {
+                &:before {
+                    background-color: #dda300;
+                }
+            }
+            &.no06 {
+                &:before {
+                    background-color: #0fa6c9;
+                }
+            }
+            &.no07 {
+                &:before {
+                    background-color: #9c2c8a;
+                }
+            }
+            &.no08 {
+                &:before {
+                    background-color: #707070;
+                }
+            }
+            &.no09 {
+                &:before {
+                    background-color: #b38850;
+                }
+            }
+        }
+    }
+}
+// 日曆calendar_Tb
+.calendar_Tb {
+    table {
+        word-break: break-all;
+        table-layout: fixed;
+        thead {
+            margin-bottom: 5px;
+        }
+        tbody {
+            border-top: 1px solid #ccc;
+        }
+        tr {
+            background-color: #fff;
+        }
+        tr:hover {
+            background-color: #fff6d2;
+            transition: .2s;
+        }
+        th {
+            background-color: #d3d3d3 !important;
+            border: 5px solid #f8f3e4;
+            color: #333;
+            padding: 0.5em 1em;
+            width: 14.28%;
+            font-size: 1.25em;
+            font-weight: 400;
+            &.weekend {
+                background-color: #f66f62 !important;
+                color: #fff;
+            }
+        }
+        td {
+            position: relative;
+            // min-height: 130px!important;
+            // background-color: #fff !important;
+            border: 1px solid #999;
+            padding: 0.5em;
+            @include screen('xs_mobile') {
+                padding-left: 17% !important;
+                min-height: 65px;
+            }
+            &:after {
+                content: '';
+                width: 1px;
+                height: 20px;
+                float: left;
+                background-color: #fff;
+                border: none;
+                @include screen('xs_mobile') {
+                    float: none;
+                    height: auto;
+                    background-color: red;
+                }
+            }
+            &:before {
+                position: absolute;
+                // top: .5em;
+                // left: .5em;
+                // padding-right: 10px;
+                // border-right: 1px solid #ccc;
+                // height: 50px;
+                width: 15%;
+                // padding-left:0;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                padding: 5px;
+                background-color: #eee;
+                color: #333;
+                text-align: center;
+                @include box-sizing;
+            }
+            &.othermonth {
+                .num_date {
+                    color: #d5d5d5;
+                }
+                @include screen('xs_mobile') {
+                    display: none;
+                }
+            }
+        }
+        .num_date {
+            position: absolute;
+            top: 0px;
+            right: 5px;
+            text-align: right;
+            color: #7a7a7a;
+            font-size: 1.063em;
+            font-weight: bolder;
+            @include screen('xs_mobile') {
+                position: absolute;
+                text-align: center;
+                right: 0;
+                left: 0;
+                top: 30px;
+                width: 15%;
+            }
+        }
+        ul {
+            margin: 25px 0 0;
+            padding: 0;
+            list-style-type: none;
+            @include screen('xs_mobile') {
+                margin: 0;
+            }
+            li {
+                margin-bottom: 3px;
+                a {
+                    display: block;
+                    padding: 8px;
+                    background-color: #666;
+                    color: #fff;
+                    text-align: center;
+                    font-size: .938em;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    &.no01 {
+                        background-color: #00a18b;
+                        &:hover {
+                            background-color: darken(#00a18b, 15);
+                        }
+                    }
+                    &.no02 {
+                        background-color: #ff6e35;
+                        &:hover {
+                            background-color: darken(#ff6e35, 15);
+                        }
+                    }
+                    &.no03 {
+                        background-color: #006ccf;
+                        &:hover {
+                            background-color: darken(#006ccf, 15);
+                        }
+                    }
+                    &.no04 {
+                        background-color: #e50022;
+                        &:hover {
+                            background-color: darken(#e50022, 15);
+                        }
+                    }
+                    &.no05 {
+                        background-color: #dda300;
+                        &:hover {
+                            background-color: darken(#dda300, 10);
+                        }
+                    }
+                    &.no06 {
+                        background-color: #0fa6c9;
+                        &:hover {
+                            background-color: darken(#0fa6c9, 15);
+                        }
+                    }
+                    &.no07 {
+                        background-color: #9c2c8a;
+                        &:hover {
+                            background-color: darken(#9c2c8a, 15);
+                        }
+                    }
+                    &.no08 {
+                        background-color: #707070;
+                        &:hover {
+                            background-color: darken(#707070, 15);
+                        }
+                    }
+                    &.no09 {
+                        background-color: #b38850;
+                        &:hover {
+                            background-color: darken(#b38850, 15);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// 活動剪影查詢
+.silhouette_search {
+    background-color: #ddd;
+    border-radius: 3px;
+    padding: 30px 30px 15px;
+    margin-bottom: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+// 瀏覽活動剪影 
+.silhouett_block {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 70px;
+    .silhouett {
+        width: 31%;
+        margin: 0 1.16%;
+        background-color: #fff;
+        margin-bottom: 25px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 3px;
+        @include screen('tablet') {
+            width: 48%;
+            margin: 0 1%;
+            margin-bottom: 25px;
+        }
+        @include screen('xs_mobile') {
+            width: 100%;
+            margin: 0;
+            margin-bottom: 25px;
+        }
+        a {
+            display: block;
+            padding: 10px;
+            border-radius: 3px;
+            @include box-sizing;
+            color: #333;
+            .img-container {
+                width: 100%;
+                @include aspect-ratio(16, 9);
+                margin: 0 0 10px;
+                img {
+                    width: 100%;
+                }
+            }
+            .title {
+                height: 80px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 1.65em;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
+            .data {
+                display: flex;
+                border-top: 1px solid #ccc;
+                justify-content: space-between;
+                padding: 8px 0 5px;
+                margin-top: 10px;
+                .date {
+                    flex: none;
+                    flex-basis: 48%;
+                }
+                .pic_num {
+                    flex: none;
+                    flex-basis: 50%;
+                    text-align: right;
+                    em {
+                        padding-left: 5px;
+                        font-weight: bold;
+                        font-style: normal;
+                    }
+                }
+            }
+            &:hover {
+                box-shadow: 0 0px 0px 2px $secondaryColor inset;
+                .title {
+                    color: $secondaryColor;
+                }
+            }
+        }
+    }
+}
+// 瀏覽活動剪影 小圖list
+.piclist {
+    width: 85%;
+    margin: 0 auto;
+    padding: 8px 5px 0;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    @include screen('mobile') {
+        width: 100%;
+    }
+    .img-container {
+        width: 9%;
+        margin: 0 0.5% 10px;
+        position: relative;
+        @include aspect-ratio(4, 3);
+        @include screen('tablet') {
+            width: 18%;
+            margin: 0 1% 10px;
+        }
+        @include screen('xs_mobile') {
+            width: 31%;
+            margin: 0 1.16% 10px;
+        }
+        a {
+            &:before {
+                content: '';
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.4);
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                position: absolute;
+                z-index: 1;
+                transition: .5s;
+            }
+            &:hover {
+                &:before {
+                    background-color: rgba(0, 0, 0, 0);
+                    outline: 2px solid $lightColor;
+                }
+            }
+            &:focus {
+                &:before {
+                    background-color: rgba(0, 0, 0, 0);
+                    outline: 2px solid $lightColor;
+                    box-shadow: 0 0px 0px 3px $lightColor inset;
+                }
+            }
+        }
+    }
+}
+// 書展list 
+.book_list_block {
+    margin-top: 20px;
+    .book_list {
+        display: flex;
+        background-color: rgba(255, 255, 255, .5);
+        border-radius: 3px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        @include screen('xs_mobile') {
+            display: block
+        }
+        .book_leftblock {
+            flex: none;
+            flex-basis: 220px;
+            .book {
+                width: 180px;
+                padding: 10px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                @include box-sizing;
+                img {
+                    width: 100%;
+                }
+            }
+            @include screen('mobile') {
+                flex-basis: 170px;
+                .book {
+                    width: 150px;
+                }
+            }
+            @include screen('xs_mobile') {
+                flex-basis: 100%;
+                margin-bottom: 20px;
+                .book {
+                    width: 95%;
+                }
+            }
+        }
+        .book_content {
+            flex: none;
+            flex-basis: calc(100% - 220px);
+            @include screen('mobile') {
+                flex-basis: calc(100% - 170px);
+            }
+            @include screen('xs_mobile') {
+                flex-basis: 100%;
+            }
+            .title {
+                margin: 0 0 20px;
+                padding: 0;
+                color: $secondaryColor;
+                a {
+                    color: $secondaryColor;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                display: flex;
+                flex-wrap: wrap;
+                @include screen('mobile') {
+                    display: block;
+                }
+                li {
+                    width: 50%;
+                    margin: 0 0 15px;
+                    @include screen('mobile') {
+                        width: 100%;
+                    }
+                    span {
+                        font-weight: bold;
+                    }
+                }
+            }
+            p {
+                white-space: normal;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 2em;
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+            }
+            .btn_block {
+                text-align: right;
+            }
+        }
+    }
+}
+// 書展 內容CP
+.book_list_cp {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 3px;
+    padding: 30px;
+    @include screen('xs_mobile') {
+        display: block
+    }
+    .book_leftblock {
+        flex: none;
+        flex-basis: 240px;
+        .book {
+            width: 220px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            @include box-sizing;
+            img {
+                width: 100%;
+            }
+        }
+        @include screen('mobile') {
+            flex-basis: 170px;
+            .book {
+                width: 150px;
+            }
+        }
+        @include screen('xs_mobile') {
+            flex-basis: 100%;
+            margin-bottom: 20px;
+            .book {
+                width: 95%;
+            }
+        }
+    }
+    .book_data {
+        flex: none;
+        flex-basis: calc(100% - 240px);
+        @include screen('mobile') {
+            flex-basis: calc(100% - 170px);
+        }
+        @include screen('xs_mobile') {
+            flex-basis: 100%;
+        }
+        .title {
+            margin: 0 0 20px;
+            padding: 0;
+            color: $secondaryColor;
+            a {
+                color: $secondaryColor;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            @include screen('mobile') {
+                display: block;
+            }
+            li {
+                width: 50%;
+                margin: 0 0 15px;
+                @include screen('mobile') {
+                    width: 100%;
+                }
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+        .btn_block {
+            text-align: right;
+        }
+    }
+    .book_content {
+        flex-basis: 100%;
+        p {
+            white-space: normal;
+            line-height: 2em;
+        }
+    }
+}

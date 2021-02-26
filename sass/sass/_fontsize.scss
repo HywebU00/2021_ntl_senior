@@ -1,0 +1,61 @@
+.font_size {
+    display: flex;
+    flex: 0 1 12.5em;
+    padding: 17px 15px;
+    position: absolute;
+    top:50px;
+    right:0;
+    background-color: $secondaryColor;
+    border-radius: 3px;
+    color:#fff;
+    @include screen('tablet'){
+       
+        display: none;
+    }
+    span {
+        font-size:0em;
+        color: #fff;
+        padding-top: .3em;
+    }
+    ul {
+        @include li-reset;
+        display: flex;
+        flex: 0 0 6em;
+        li {
+            font-size: 1em;
+            flex: 0 0 auto;
+            margin:0 7px 0 0;
+            align-items: center;
+            a {
+                display: block;
+                text-align: center;
+                line-height: 32px;
+                border-radius: 50%;
+                border:1px solid #fff;
+                width: 32px;
+                height: 32px;
+                color: #fff;
+                transition: .5s;
+                &:hover, &:focus {
+                    background: #fff;
+                    color: $aHover;
+                }
+                &.active {
+                    background: #fff;
+                    color: $aHover;
+                    &:hover, &:focus {
+                        background: #fff;
+                        color: $aHover;
+                    }
+                }
+                &.small {
+                    font-size: .938em;
+                }
+                &.large {
+                    font-size: 1.125em;
+                }
+            }
+        }
+    }
+    
+}

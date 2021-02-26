@@ -1,0 +1,201 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    &.noscroll {
+        position: static !important;
+        width: 100%;
+        height: 100%;
+        overflow: hidden !important;
+        overflow-y: hidden !important;
+        margin: 0;
+        padding: 0;
+    }
+
+}
+// 最外圍預設為100%
+.wrapper {
+    width: 100%;
+    margin: 0px auto;
+    position: relative;
+    background-image: url('../images/wrapper_inbg.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: #f1efe8;
+    // @include screen('tablet') {
+    //     background-position: center -300px;
+    // }
+    @include screen('mobile') {
+        overflow: hidden;
+        overflow-y: auto;
+    }
+    &:after {
+        content: '';
+        width: 100%;
+        height: 768px;
+        background-image: url('../images/main_afterbg.jpg');
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        position: absolute;
+        bottom: 360px;
+        z-index: 0;
+        @include screen('tablet') {
+            bottom: 470px;
+        }
+        @include screen('mobile') {
+            bottom: 400px;
+        }
+    }
+    &.mpwrapper {
+        background-image: none;
+    }
+}
+// 整體共用container樣式，請注意首頁切版頁面的整齊
+.container {
+    padding: 0;
+    margin: 0 auto;
+    max-width: $container-max; //請看_variable.scss
+    @include gutter(100px); //gutter 代表左右要留白
+    @include screen('mobile') {
+        @include gutter(50px);
+    }
+}
+.main {
+    position: relative;
+    margin: 0 auto;
+    padding: 1em 0 0 0;
+    background-image: url('../images/main_beforebg.jpg');
+    background-repeat: no-repeat;
+    background-position: center 165px;
+    font-size: 1.125em;
+    @include screen('tablet') {
+        background-position: center 0;
+        padding: 0
+    }
+    // 可先設定一個中央區塊最大寬，限制accesskey對齊
+    // }
+    h2 {
+        line-height: 1.25em;
+    }
+    &.small_size {
+        font-size: 1em;
+    }
+    &.medium-size{
+        font-size: 1.125em;
+    }
+    &.large_size {
+        font-size: 1.25em;
+    }
+}
+////////////////////////////////////////////////////////////
+// 為了與首頁區隔，請在內頁加上innerpage ClassName
+.innerpage {
+    background-image: none;
+    padding-top: 180px;
+    padding-bottom: 200px;
+    @include screen('tablet') {
+        padding-top: 80px;
+    }
+    @include screen('mobile'){
+        padding-bottom: 100px;
+    }
+    >.container {
+        @include gutter(140px); //gutter 代表左右要留白
+        display: flex;
+        @include screen('mobile') {
+            @include gutter(50px);
+        }
+    }
+    .left_block {
+        flex: 0 0 260px;
+        max-width: 260px;
+        // float: left;
+        // width: 260px;
+        margin-right: 40px;
+        display: none;
+        @include screen('tablet') {
+            display: none;
+        }
+    }
+    .center_block {
+        flex: auto;
+        max-width: 100%;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+    
+    h2 {
+        line-height: 1.25em;
+        border-bottom: 4px solid #434242;
+        margin: 0 0 10px;
+        padding: 15px 0 10px;
+        position: relative;
+    }
+}
+.hidden {
+    display: none;
+}
+// more
+.more {
+    text-align: right;
+    a {
+        position: relative;
+        color: #fff;
+        background-color: $secondaryColor;
+        border-radius: 3px;
+        padding: 10px 20px 10px 50px;
+        font-size: 1em;
+        letter-spacing: 0.05em;
+        font-weight: bold;
+        background-image: url('../images/more_icon.svg');
+        background-repeat: no-repeat;
+        background-position: 20px 12px;
+        background-size: 20px;
+        overflow: hidden;
+        z-index: 3;
+        transition: .5s;
+        // &:before {
+        //     content: '';
+        //     background-image: url(../images/more_icon.svg);
+        //     background-repeat: no-repeat;
+        //     background-position: 0 0;
+        //     background-size: 20px;
+        //     position: absolute;
+        //     top: 12px;
+        //     left: 20px;
+        //     width: 20px;
+        //     height: 20px;
+        //     z-index: 2;
+        // }
+        &:hover {
+            background-color: darken($secondaryColor, 10);
+            padding: 10px 30px 10px 60px;
+            background-position: 30px 12px;
+        }
+    }
+}
+// 訂閱
+.subscription {
+    margin-bottom: 5px;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    font-size: 0.688em;
+    font-weight: normal;
+    a {
+        display: block;
+        padding: 0 0 3px 30px;
+        background-image: url('../images/icon_rss.png');
+        background-repeat: no-repeat;
+        background-position: left 3px;
+        color: #333;
+        letter-spacing: 0.05em;
+        &:hover {
+            color: $secondaryColor;
+        }
+    }
+}

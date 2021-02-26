@@ -1,0 +1,137 @@
+.fatfooter {
+    @extend %clearfix;
+    // overflow: hidden;
+    padding-bottom: 1.5em;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    @include screen('mobile') {
+        display: none;
+    }
+    .container {
+        // overflow: hidden;
+        box-sizing: border-box;
+        @include gutter(100px); //gutter 代表左右要留白
+        @include screen('mobile') {
+            @include gutter(50px);
+        }
+    }
+    // 按鈕
+    .btn-fatfooter {
+        font-size: .813em;
+        display: block;
+        width: 6em;
+        color: #FFF;
+        border: none;
+        position: absolute;
+        right: 50%;
+        top: -15px;
+        margin: 0 -3em 0 0;
+        z-index: 90;
+        text-indent: -9999px;
+        border-radius: 4px;
+        background-color: $primaryColor;
+        &:before {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border: 2px solid #000;
+            border-left: none;
+            border-bottom: none;
+            transform: rotate(-45deg);
+            left: 50%;
+            top: 12px;
+            margin-left: -6px;
+            transition: .3s ease-out;
+        }
+        &:hover,
+        &:focus {
+            background: $primaryColor;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            box-shadow: none;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+        &.close {
+            &:before {
+                transform: rotate(135deg) !important;
+                top: 5px;
+            }
+        }
+    }
+    nav {
+        // overflow: hidden;
+        display: block;
+        position: relative;
+        padding: 2.5em .5em 3em;
+        box-sizing: border-box;
+        background-color: $primaryColor;
+        color: #fff;
+        font-size: 1.125em;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            @include li-reset;
+            li {
+                flex: none;
+                flex-basis: 13%;
+                margin: 0 0.64%;
+                box-sizing: border-box;
+                @include screen('tablet'){
+                    flex-basis: 22%;
+                     margin: 0 1.5% ;
+                }
+                a {
+                    line-height: 1.5;
+                    display: block;
+                    font-weight: bold;
+                    padding: .5em 0px;
+                    box-sizing: border-box;
+                    color: #000;
+                    border-bottom: 2px solid #000;
+                    &:hover {
+                        box-shadow: none;
+                    }
+                }
+                ul {
+                    // display: flex;
+                    // flex-direction:column;
+                    // flex-wrap:wrap;
+                    display: block;
+                    margin: 8px 0 0 0;
+                    padding: 0 1em 0 0;
+                    @include screen('mobile') {
+                        width: auto;
+                    }
+                    li {
+                        // flex: 0 0 100%;
+                        a {
+                            display: block;
+                            @include aSetting_nocolor;
+                            font-weight: normal;
+                            text-align: left;
+                            line-height: 1.5em;
+                            padding: .3em 0;
+                            background: none;
+                            color: #000;
+                            border-bottom: none;
+                            &:hover, &:focus {
+                                text-decoration: underline;
+                                color: #000;
+                            }
+                        }
+                    }
+                    //第三層關閉
+                    ul {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

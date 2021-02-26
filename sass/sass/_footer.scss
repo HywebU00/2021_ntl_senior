@@ -1,0 +1,119 @@
+footer {
+    box-sizing: border-box;
+    @include clearfix;
+    text-align: left;
+    font-size: 1em;
+    padding: 1em 0;
+     position: relative;
+    z-index: 1;
+    .container {
+        @include gutter(100px);
+
+        >div {
+            padding-bottom: 1em;
+        }
+        display: flex;
+        flex-wrap:wrap;
+    }
+    @include screen('mobile'){
+        .container{
+              @include gutter(50px);
+        }
+        background-color: #f1ebe3;
+         padding: 2.5em 0 1em;
+    }
+    a {
+        text-decoration: none;
+        color: $primaryColor;
+        &:hover,
+        &:focus {
+            color: darken($primaryColor, 10);
+        }
+    }
+    .footer_logo {
+        flex: auto;
+    }
+    .footer_info {
+        flex: auto;
+        display: flex;
+        justify-content: center;
+    }
+    .footer_content {
+        flex: auto;
+    }
+    .footer_icon {
+        flex: 0 1 200px;
+        flex-basis: 200px;
+        align-self:flex-end;
+        @include screen('tablet') {
+            flex: 1 1 100%;
+            text-align: right;
+        }
+    }
+    // 版權連結
+    .footer_link {
+        @include li-reset();
+        @include clearfix();
+        display: flex;
+        flex-wrap: wrap;
+        
+        li {
+            flex: 0 1 auto;
+            margin: 0px 5px 5px 0px;
+            @include screen('xs_mobile'){
+                flex: 1 1 100%;
+            }
+            a {
+                display: block;
+                padding: .5em 1em;
+                background: #e2dbd1;
+                color: #333;
+                border-radius: 4px;
+                text-align: center;
+                transition: all .3s ease-out;
+                white-space: nowrap;
+                &:hover,
+                &:focus {
+                    background: $primaryColor;
+                }
+            }
+        }
+    }
+    p {
+        line-height: 1.65em;
+    }
+    .update,
+    .counter {
+        display: inline-block;
+        margin-right:0px;
+        text-align: right;
+        em {
+            font-style: normal;
+            color: #333;
+            padding: 0 ;
+        }
+    }
+    .footer_icon {
+        text-align: right;
+        a {
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+            &:focus {
+                &:after {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    box-shadow: 0px 0px 0px 1px $aHover inset;
+                    z-index: 99;
+                }
+            }
+        }
+        img {
+            max-width: 120px;
+        }
+    }
+}

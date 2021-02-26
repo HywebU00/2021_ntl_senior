@@ -1,0 +1,228 @@
+/////////////////////////////////////////////////////////以下為demo範例///
+// 首頁區塊設定
+// 範例：
+.demosection {
+    [class^="col"] {
+        border: 2px solid #FFF;
+        background: #DEDEDE;
+    }
+}
+// mpSlider_block
+.mpSlider_block {
+    position: relative;
+    margin-bottom: 128px;
+    // .number_slider {
+    //     position: absolute;
+    //     color: #666;
+    //     right: 200px;
+    //     width: 100px;
+    //     bottom: -3.5em;
+    //     height: 2.5em;
+    //     line-height: 2.5em;
+    //     background: none;
+    //     letter-spacing: 0.01em;
+    //     font-size: 1em;
+    //     z-index: 9;
+    //     em {
+    //         font-size: 2.5em;
+    //         color: #444;
+    //         font-style: normal;
+    //         margin-right: 5px;
+    //     }
+    // }
+}
+// icon選單 
+.iconmenu {
+    background-color: $secondaryColor;
+    color: #fff;
+    padding: 35px 30px;
+    margin-bottom: 30px;
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        li {
+            list-style-type: none;
+            flex: none;
+            flex-basis: 16.6%;
+            position: relative;
+            @include screen('mobile') {
+                flex-basis: 33.3%;
+            }
+            @media (max-width: 400px){
+                flex-basis: 50%;
+            }
+            &:before {
+                content: '';
+                width: 1px;
+                height: 95px;
+                background-color: #fff;
+                position: absolute;
+                right: 0;
+                top: 10px;
+            }
+            &:last-child {
+                &:before {
+                    display: none;
+                }
+            }
+            @media (max-width: 767px)and(min-width:399px){
+                &:nth-child(3n) {
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+            @media (max-width: 400px) {
+                &:nth-child(2n) {
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+            a {
+                color: #fff;
+                text-align: center;
+                display: block;
+                font-size: 1.25em;
+                font-weight: bolder;
+                transition: .5s;
+                margin: 0 auto;
+                height: 120px;
+                padding: 10px 0;
+                img {
+                    display: block;
+                    margin: 0 auto 10px;
+                    width: 60px;
+                    transition: .5s;
+                }
+                &:hover {
+                    font-size: 1.375em;
+                    img {
+                        width: 65px;
+                    }
+                }
+            }
+        }
+    }
+}
+// 活動訊息
+.activity_block {
+    position: relative;
+    z-index: 1;
+    h2 {
+        font-size: 1.75em;
+        text-align: center;
+        margin: 30px 0;
+    }
+    .activity {
+        position: relative;
+        margin-right: 20px;
+        @include screen('tablet') {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+    .calendar_block {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .year_month {
+            flex: none;
+            flex-basis: 50%;
+            font-size: 1.5em;
+            color: #333;
+            font-weight: bold;
+            letter-spacing: 0.02em;
+            margin-bottom: 5px;
+        }
+        .month_btn {
+            flex: none;
+            flex-basis: 48%;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: flex-end;
+            button {
+                font-size: 1em;
+                padding: 3px 5px;
+                background-color: #fff;
+                border-radius: 3px;
+                display: inline-block;
+                margin: 0 0 0 3px;
+            }
+        }
+        .calendar_table {
+            flex: none;
+            flex-basis: 100%;
+            min-width: auto;
+            margin-bottom: 5px;
+            table {
+                th, td {
+                    text-align: center;
+                }
+                th {
+                    background-color: #777;
+                    color: #fff;
+                }
+                td {
+                    background-color: #fff;
+                    &.today {
+                        background-color: #f7bc6a;
+                    }
+                    &.closed {
+                        color: #b31004;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+    .explain {
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            li {
+                display: inline-block;
+                margin-right: 10px;
+                font-size: 0.875em;
+                padding-left: 15px;
+                position: relative;
+                em {
+                    font-size: 0;
+                    position: absolute;
+                    left: 0;
+                    top: 5px;
+                    &.redword {
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background-color: #b31004;
+                        display: block;
+                    }
+                    &.orangebg {
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background-color: #f7bc6a;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+// 廣告輪播
+.ad_block {
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+    h2 {
+        font-size: 1.75em;
+        text-align: center;
+        margin: 30px 0;
+    }
+}

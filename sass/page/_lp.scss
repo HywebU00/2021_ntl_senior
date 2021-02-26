@@ -1,0 +1,119 @@
+.lp {
+    table {
+        td {
+            a {
+                @include aSetting_nocolor;
+            }
+            &.date {
+                text-align: center;
+                color: #666;
+                @include screen('mobile') {
+                    text-align: left;
+                }
+            }
+            &.num {
+                text-align: center;
+                color: #666;
+                @include screen('mobile') {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    .list {
+        margin-bottom: 70px;
+        &>ul, ol {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            &>li {
+                padding: 0;
+                border-bottom: 1px solid #333;
+                position: relative; // outline: 1px solid blue;
+                .tag {
+                    margin-left: 2em;
+                }
+                &>a {
+                    display: block;
+                    position: relative;
+                    line-height: 1.45em;
+                    color: $color-word;
+                    font-size: 1em;
+                    padding: 1em 180px 1em 1em;
+                    background-color: rgba(241, 239, 232, .5);
+                    @include text-overflow;
+                    @include screen('mobile'){
+                        padding: 1em;
+                        overflow: visible;
+                        white-space: normal;
+                        time{
+                            position:relative;
+                            top:auto;
+                            left:auto;
+                            padding:0.1em;
+                            border:none;
+                        }
+                    }
+                    &:hover {
+                        color: $aHover;
+                        background-color: #fff;
+                    }
+                    .num {
+                        width: 1.5em;
+                        text-align: right;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        &:after {
+                            content: ".";
+                            display: inline-block;
+                        }
+                    }
+                }
+                span.dept {
+                    display: inline-block;
+                    font-size: .938em;
+                    @include screen("mobile") {
+                        display: block;
+                    }
+                }
+                time {
+                    display: block;
+                    color: #017874;
+                    font-size: 1em;
+                    position: absolute;
+                    top: 15px;
+                    right: 0;
+                    padding: 0.1em 20px;
+                    border-left: 1px dotted #666;
+                }
+            }
+        }
+    }
+}
+.album {
+    margin: 1em auto;
+    ul {
+        @include li-reset;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: stretch;
+        flex-wrap: wrap;
+        li {
+            flex: 0 0 30%;
+            margin: 0 1.66% 3%;
+            display: flex;
+            flex-direction: row;
+            align-content: stretch;
+            @include screen('tablet') {
+                flex: 0 0 46%;
+                margin: 0 2% 3%;
+            }
+            @include screen('mobile') {
+                flex: 0 0 96%;
+                margin: 0 3% 5%;
+            }
+        }
+    }
+}
