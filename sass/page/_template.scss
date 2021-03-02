@@ -73,7 +73,7 @@ body {
     font-size: 1.125em;
     @include screen('tablet') {
         background-position: center 0;
-        padding: 0
+        padding:90px 0 0  0;
     }
     // 可先設定一個中央區塊最大寬，限制accesskey對齊
     // }

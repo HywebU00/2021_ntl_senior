@@ -719,7 +719,6 @@ $(function() {
                 $('.font_size').find('.large').parent('li').siblings('li').find('a').removeClass('active');
                 $('.main').removeClass('small_size medium_size').addClass('large_size');
                 $('.font_size').find('.large').addClass('active');
-                $('.font_size').find('.large').addClass('active');
                 e.preventDefault();
             }
         }
