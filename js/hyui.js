@@ -712,12 +712,13 @@ $(function() {
                 //$('.font_size').find('.medium').click();
                 $('.font_size').find('.medium').parent('li').siblings('li').find('a').removeClass('active');
                 $('.main').removeClass('large_size small_size');
+                $('.font_size').find('.medium').addClass('active');
                 e.preventDefault();
             } else {
                 //這裡是預設宣告
                 //$('.font_size').find('.large').click();
                 $('.font_size').find('.large').parent('li').siblings('li').find('a').removeClass('active');
-                $('.main').removeClass('small_size medium_size').addClass('large_size');
+                $('.main').removeClass('small_size medium_size');
                 $('.font_size').find('.large').addClass('active');
                 e.preventDefault();
             }
