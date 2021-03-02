@@ -11,7 +11,6 @@
     .year_month {
         display: inline-block;
         vertical-align: middle;
-        margin-right: 5px;
         span {
             color: #990000;
             padding: 0 10px;
@@ -167,7 +166,7 @@
             // background-color: #fff !important;
             border: 1px solid #999;
             padding: 0.5em;
-            @include screen('xs_mobile') {
+            @include screen('mobile') {
                 padding-left: 17% !important;
                 min-height: 65px;
             }
@@ -178,7 +177,7 @@
                 float: left;
                 background-color: #fff;
                 border: none;
-                @include screen('xs_mobile') {
+                @include screen('mobile') {
                     float: none;
                     height: auto;
                     background-color: red;
@@ -206,7 +205,7 @@
                 .num_date {
                     color: #d5d5d5;
                 }
-                @include screen('xs_mobile') {
+                @include screen('mobile') {
                     display: none;
                 }
             }
@@ -219,7 +218,7 @@
             color: #7a7a7a;
             font-size: 1.063em;
             font-weight: bolder;
-            @include screen('xs_mobile') {
+            @include screen('mobile') {
                 position: absolute;
                 text-align: center;
                 right: 0;
@@ -232,7 +231,7 @@
             margin: 25px 0 0;
             padding: 0;
             list-style-type: none;
-            @include screen('xs_mobile') {
+            @include screen('mobile') {
                 margin: 0;
             }
             li {

@@ -2,7 +2,7 @@
 table {
     width: 100%;
     border-collapse: collapse;
-    @include screen('xs_mobile') {
+    @include screen('mobile') {
         width: 100%;
     }
     th,
@@ -47,7 +47,7 @@ table {
     }
 }
 .table_list {
-    @include screen('xs_mobile') {
+    @include screen('mobile') {
         background-color: transparent !important; //Force table to not be like tables anymore
         thead,
         tbody,

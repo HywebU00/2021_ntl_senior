@@ -2,6 +2,7 @@
     &.small_size {
         font-size: 1em;
     }
+    // 中
     &.medium-size {
         font-size: 1.125em;
         .mpSlider:before {
@@ -34,7 +35,16 @@
                 background-position: left 5px;
             }
         }
+        // 
+        .year_month_block{
+            .prev_btn, .next_btn{
+                a{
+                    line-height: 35px;
+                }
+            }
+        }
     }
+    // 大
     &.large_size {
         font-size: 1.25em;
         .mpSlider:before {
@@ -68,6 +78,14 @@
         .subscription{
             a{
                 background-position: left 7px;
+            }
+        }
+        // 
+        .year_month_block{
+            .prev_btn, .next_btn{
+                a{
+                    line-height: 32px;
+                }
             }
         }
 
