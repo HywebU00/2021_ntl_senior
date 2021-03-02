@@ -138,6 +138,7 @@
             font-weight: bold;
             letter-spacing: 0.02em;
             margin-bottom: 5px;
+            white-space: nowrap;
         }
         .month_btn {
             flex: none;
@@ -152,6 +153,7 @@
                 border-radius: 3px;
                 display: inline-block;
                 margin: 0 0 0 3px;
+                white-space: nowrap;
             }
         }
         .calendar_table {
@@ -162,6 +164,8 @@
             table {
                 th, td {
                     text-align: center;
+                    padding-left:0.3em;
+                    padding-right:0.3em;
                 }
                 th {
                     background-color: #777;
@@ -169,6 +173,7 @@
                 }
                 td {
                     background-color: #fff;
+                    white-space: nowrap;
                     &.today {
                         background-color: #f7bc6a;
                     }

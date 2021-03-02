@@ -3,7 +3,7 @@
     position: relative;
     z-index: 99;
     @include screen('tablet') {
-       background-color: #f1efe8;
+        background-color: #f1efe8;
         box-shadow: 0px 2px 5px RGBA(0, 0, 0, 0.3);
         position: fixed;
         width: 100%;
@@ -85,8 +85,8 @@
                 top: 10px;
                 left: 10px;
                 display: block;
-                @media(max-width: 400px){
-                     background-size: 25px;
+                @media(max-width: 400px) {
+                    background-size: 25px;
                 }
             }
         }
@@ -95,7 +95,7 @@
         float: left;
         width: 410px;
         height: 42px;
-        margin: 0 ;
+        margin: 0;
         padding: 0;
         box-sizing: border-box;
         a {
@@ -106,10 +106,9 @@
             width: 100%;
             max-height: 42px;
         }
-       
         @include screen('tablet') {
             padding: 10px 0;
-            float:none;
+            float: none;
             text-align: center;
             width: 410px;
             height: 60px;
@@ -124,17 +123,17 @@
                 transform: scale(.8);
             }
         }
-        @media(max-width: 450px){
-             width: 350px;
-             padding: 15px 0;
+        @media(max-width: 450px) {
+            width: 350px;
+            padding: 15px 0;
         }
-        @media(max-width: 400px){
-             width: 300px;
-             padding: 15px 0;
+        @media(max-width: 400px) {
+            width: 300px;
+            padding: 15px 0;
         }
-        @media(max-width: 350px){
-             width: 260px;
-             padding: 15px 0;
+        @media(max-width: 350px) {
+            width: 260px;
+            padding: 15px 0;
         }
     }
     // 導覽列
@@ -199,6 +198,50 @@
             right: 15px;
             top: .35em;
             font-size: .75em;
+        }
+    }
+    .font_size {
+        display: flex;
+        flex: 0 1 12.5em;
+        padding: 17px 15px;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: $secondaryColor;
+        border-radius: 3px;
+        color: #fff;
+        @include screen('tablet') {
+            display: none;
+        }
+        span {
+            font-size: 0em;
+            color: #fff;
+            padding-top: .3em;
+        }
+        ul {
+            li {
+                margin: 0 7px 0 0;
+                a {
+                    border: 1px solid #fff;
+                    color: #fff;
+                    background-color: $secondaryColor;
+                    line-height: 32px;
+                    width: 32px;
+                    height: 32px;
+                    &:hover, &:focus {
+                        background: #fff;
+                        color: $aHover;
+                    }
+                    &.active {
+                        background: #fff;
+                        color: $aHover;
+                        &:hover, &:focus {
+                            background: #fff;
+                            color: $aHover;
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -358,7 +401,7 @@
     box-shadow: rgba(0, 0, 0, .5) 0 0 25px;
     background: rgba(0, 0, 0, .75);
     z-index: 999;
-    padding:0px 0 10px;
+    padding: 0px 0 10px;
     @include screen('tablet') {
         background: #FFF;
     }

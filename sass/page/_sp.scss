@@ -1,22 +1,21 @@
 .year_month_block {
     font-size: 2em;
     text-align: center;
-    margin: 20px 40px;
+    margin: 20px 0;
     font-weight: 500;
     @media(max-width: 480px) {
-        font-size: 1.75em;
+        font-size: 1.25em;
+        margin: 20px 0;
     }
-    @media(max-width: 380px) {
-        font-size: 1.5em;
-    }
+   
     .year_month {
         display: inline-block;
         vertical-align: middle;
         margin-right: 5px;
         span {
-            color: #ee4f4b;
+            color: #990000;
             padding: 0 10px;
-            font-family: 'Merriweather', serif;
+            
             font-weight: 400;
             font-size: 1.5em;
             @media(max-width: 380px) {
@@ -67,22 +66,27 @@
     ul {
         margin: 0 auto;
         padding: 0;
-        width: 80%;
+        // width: 80%;
         list-style: none;
         text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
         @include screen('mobile') {
-            width: 90%;
+            justify-content: flex-start;
         }
-        @media(max-width:590px) {
-            width: 95%;
-        }
+        // @media(max-width:590px) {
+        //     width: 95%;
+        // }
+        
         li {
             display: inline-block;
             ;
-            width: 105px;
+            width: 110px;
             margin: 0 4px 8px;
             padding-left: 20px;
             position: relative;
+            text-align: left;
             &:before {
                 content: '';
                 width: 12px;
@@ -94,12 +98,12 @@
             }
             &.no01 {
                 &:before {
-                    background-color: #00a18b;
+                    background-color: $secondaryColor;
                 }
             }
             &.no02 {
                 &:before {
-                    background-color: #ff6e35;
+                    background-color: $color-orange;
                 }
             }
             &.no03 {
@@ -109,34 +113,20 @@
             }
             &.no04 {
                 &:before {
-                    background-color: #e50022;
+                    background-color: #9c2c8a;
                 }
             }
             &.no05 {
                 &:before {
-                    background-color: #dda300;
+                    background-color: #94672d;
                 }
             }
             &.no06 {
                 &:before {
-                    background-color: #0fa6c9;
+                    background-color: #666;
                 }
             }
-            &.no07 {
-                &:before {
-                    background-color: #9c2c8a;
-                }
-            }
-            &.no08 {
-                &:before {
-                    background-color: #707070;
-                }
-            }
-            &.no09 {
-                &:before {
-                    background-color: #b38850;
-                }
-            }
+            
         }
     }
 }
@@ -167,7 +157,7 @@
             font-size: 1.25em;
             font-weight: 400;
             &.weekend {
-                background-color: #f66f62 !important;
+                background-color: #990000 !important;
                 color: #fff;
             }
         }
@@ -258,15 +248,15 @@
                     overflow: hidden;
                     text-overflow: ellipsis;
                     &.no01 {
-                        background-color: #00a18b;
+                        background-color: $secondaryColor;
                         &:hover {
-                            background-color: darken(#00a18b, 15);
+                            background-color: darken($secondaryColor, 15);
                         }
                     }
                     &.no02 {
-                        background-color: #ff6e35;
+                        background-color: $color-orange;
                         &:hover {
-                            background-color: darken(#ff6e35, 15);
+                            background-color: darken($color-orange, 15);
                         }
                     }
                     &.no03 {
@@ -276,41 +266,24 @@
                         }
                     }
                     &.no04 {
-                        background-color: #e50022;
-                        &:hover {
-                            background-color: darken(#e50022, 15);
-                        }
-                    }
-                    &.no05 {
-                        background-color: #dda300;
-                        &:hover {
-                            background-color: darken(#dda300, 10);
-                        }
-                    }
-                    &.no06 {
-                        background-color: #0fa6c9;
-                        &:hover {
-                            background-color: darken(#0fa6c9, 15);
-                        }
-                    }
-                    &.no07 {
                         background-color: #9c2c8a;
                         &:hover {
                             background-color: darken(#9c2c8a, 15);
                         }
                     }
-                    &.no08 {
-                        background-color: #707070;
+                    &.no05 {
+                        background-color: #94672d;
                         &:hover {
-                            background-color: darken(#707070, 15);
+                            background-color: darken(#94672d, 10);
                         }
                     }
-                    &.no09 {
-                        background-color: #b38850;
+                    &.no06 {
+                        background-color: #666;
                         &:hover {
-                            background-color: darken(#b38850, 15);
+                            background-color: darken(#666, 15);
                         }
                     }
+                    
                 }
             }
         }
@@ -318,11 +291,12 @@
 }
 // 活動剪影查詢
 .silhouette_search {
-    background-color: #ddd;
+    background-color: rgba(255, 255, 255, .5);
     border-radius: 3px;
     padding: 30px 30px 15px;
     margin-bottom: 50px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    ;
 }
 // 瀏覽活動剪影 
 .silhouett_block {

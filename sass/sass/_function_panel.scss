@@ -1,7 +1,7 @@
 // function_panel setting
 .function_panel {
-    margin: .2em 0 0.5em;
-    padding: .5em 0 .5em;
+    margin: 0em 0 0.5em;
+    padding: 0em 0 .5em;
     min-height: 35px;
     // border-top: 1px solid #DDD;
     // border-bottom: 1px solid #DDD;
@@ -9,7 +9,7 @@
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
-    @include screen('mobile') {
+    @include screen('tablet') {
         margin: .6em 0;
         padding: .5em 0 .5em;
     }
@@ -19,6 +19,13 @@
     .function {
         flex: 0 0 auto;
     }
+    .font_size {
+        display: none;
+        margin-top: -5px;
+        @include screen('tablet') {
+            display: block;
+        }
+    }
     .publish_time {
         flex: 1 1 auto;
         min-width: 100px;
@@ -26,14 +33,14 @@
         color: #000;
         span {
             font-size: .938em;
-            @include screen('mobile') {
+            @include screen('tablet') {
                 display: none;
             }
         }
         time {
             font-family: georgia;
             font-size: 1.125em;
-            @include screen('mobile') {
+            @include screen('tablet') {
                 font-size: .938em;
             }
         }

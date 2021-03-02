@@ -137,7 +137,7 @@ $(function() {
             menu_status = false;
             _sidebar.hide();
             _overlay.hide();
-            _fontsize.prependTo(_mArea);
+            // _fontsize.prependTo(_mArea);
             _mArea.css({
                 'margin-left': _mArea.width() * -1 + 'px'
             });
@@ -221,7 +221,7 @@ $(function() {
             _menu.appendTo('.header .container');
             _megamenu.appendTo('.header .container');
             _search.removeClass('m_search');
-            _fontsize.insertAfter('.header .search');
+            // _fontsize.insertAfter('.header .search');
             // $('.number_slider').insertBefore('.mpSlider .slick-prev');
             $('.m_search').hide();
             _search.show();
