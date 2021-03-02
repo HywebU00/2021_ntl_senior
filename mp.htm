@@ -10,6 +10,8 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+     <!-- wow -->
+    <link rel="stylesheet" href="css/animate.css">
     <!-- hyUI css -->
     <link rel="stylesheet" href="css/hyui.css">
     <!-- favicon -->
@@ -147,7 +149,7 @@
                 <div class="container">
                     <div class="col">
                         <!-- <div class="number_slider"><em>01</em>/03</div> -->
-                        <div class="mpSlider">
+                        <div class="mpSlider wow fadeInDown" data-wow-duration="2s" data-wow-delay="0s">
                             <div class="img-container">
                                 <a href="#" title="">
                                     <picture>
@@ -196,7 +198,7 @@
             <section class="col-12">
                 <div class="container">
                     <div class="col">
-                        <div class="iconmenu">
+                        <div class="iconmenu wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
                             <ul>
                                 <li><a href="最新消息_條列頁.htm"><img src="images/iconmenu_pic01.svg">最新消息</a></li>
                                 <li><a href="#"><img src="images/iconmenu_pic02.svg">展覽</a></li>
@@ -211,7 +213,7 @@
             </section>
             <!-- icon選單 end-->
             <!-- 活動訊息 start-->
-            <section class="col-8-4 activity_block">
+            <section class="col-8-4 activity_block" >
                 <div class="container">
                     <h2>活動訊息</h2>
                     <div class="col">
@@ -304,7 +306,7 @@
                             <!-- 日曆 end -->
                         </div>
                     </div>
-                    <div class="col">
+                     <div class="col">
                         <div class="tabSet">
                             <section class="tabs activitytab">
                                 <div class="tabItem active"><a href="#">本月活動</a></div>
@@ -525,6 +527,11 @@
     <script src="vendor/lazyload/lazyload.js"></script><!-- lazyload -->
     <script src="vendor/picturefill/picturefill.min.js" async></script><!-- picturefill -->
     <script src="vendor/scrolltable/jquery.scroltable.min.js"></script><!-- scrolltable -->
+    <!-- wow js -->
+    <script src="js/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
     <!-- hyUI -->
     <script src="js/hyui.js"></script>
     <!-- 客製js -->
