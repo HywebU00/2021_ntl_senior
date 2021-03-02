@@ -656,24 +656,25 @@ $(function() {
     /*------------------------------------*/
     /////////////字型大小 font-size//////////
     /*------------------------------------*/
-    // $('.font_size').find('.large').addClass('active');
+    $('.font_size').find('.large').addClass('active');
+    $('.main').addClass('large_size');
     $('.font_size').find('.small').click(function(e) {
         $(this).parent('li').siblings('li').find('a').removeClass('active');
-        $('.main').removeClass('large_size').addClass('small_size');
+        $('.main').removeClass('large_size medium-size').addClass('small_size');
         $(this).addClass('active');
         e.preventDefault();
         createCookie('FontSize', 'small', 356);
     });
     $('.font_size').find('.medium').click(function(e) {
         $(this).parent('li').siblings('li').find('a').removeClass('active');
-        $('.main').removeClass('large_size small_size');
+        $('.main').removeClass('large_size small_size').addClass('medium-size');
         $(this).addClass('active');
         e.preventDefault();
         createCookie('FontSize', 'medium', 356);
     });
     $('.font_size').find('.large').click(function(e) {
         $(this).parent('li').siblings('li').find('a').removeClass('active');
-        $('.main').removeClass('small_size').addClass('large_size');
+        $('.main').removeClass('small_size medium-size').addClass('large_size');
         $(this).addClass('active');
         e.preventDefault();
         createCookie('FontSize', 'large', 356);
