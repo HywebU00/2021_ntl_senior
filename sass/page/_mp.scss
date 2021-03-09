@@ -51,7 +51,7 @@
             @include screen('mobile') {
                 flex-basis: 33.3%;
             }
-            @media (max-width: 400px){
+            @media (max-width: 400px) {
                 flex-basis: 50%;
             }
             &:before {
@@ -68,7 +68,7 @@
                     display: none;
                 }
             }
-            @media (max-width: 767px)and(min-width:399px){
+            @media (max-width: 767px)and(min-width:399px) {
                 &:nth-child(3n) {
                     &:before {
                         display: none;
@@ -165,8 +165,8 @@
             table {
                 th, td {
                     text-align: center;
-                    padding-left:0.3em;
-                    padding-right:0.3em;
+                    padding-left: 0.3em;
+                    padding-right: 0.3em;
                 }
                 th {
                     background-color: #777;
@@ -175,12 +175,26 @@
                 td {
                     background-color: #fff;
                     white-space: nowrap;
+                    padding: 0;
+                    a {
+                        color: #333;
+                        display: block;
+                        padding: 0.5em;
+                        &:hover {
+                            text-decoration: underline;
+                            background-color: #ddd;
+                        }
+                    }
                     &.today {
-                        background-color: #f7bc6a;
+                        a {
+                            background-color: #f7bc6a;
+                        }
                     }
                     &.closed {
-                        color: #b31004;
-                        font-weight: bold;
+                        a {
+                            color: #b31004;
+                            font-weight: bold;
+                        }
                     }
                 }
             }

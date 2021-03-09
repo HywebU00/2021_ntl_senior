@@ -518,23 +518,24 @@ $(function() {
                 _tabItemA = _tabItem.children('a'),
                 _tabContent = _tab.find('.tabContent'),
                 tabwidth = _tab.width(),
-                tabItemHeight = _tabItem.outerHeight(),
                 tabContentHeight = _tab.find('.active').next().innerHeight(),
-                tiGap = 2,
-                tabItemLength = _tabItem.length,
+                tiGap = 5,
+                tabItemLength = _tabItem.length, //有幾個頁籤
+                tabItemRows = parseInt(tabItemLength / 5) + 1, //頁籤有幾行
+                tabItemHeight = _tabItem.outerHeight() * tabItemRows, //頁籤的總高度
                 tabItemWidth;
             _tab.find('.active').next('.tabContent').show();
             if (ww >= wwSmall) {
                 _tabContent.css('top', tabItemHeight);
                 _tab.height(tabContentHeight + tabItemHeight);
-                tabItemWidth = (tabwidth - (tabItemLength - 1) * tiGap) / tabItemLength;
-                _tabItem.width(tabItemWidth).css('margin-left', tiGap);
-                _tabItem.first().css('margin-left', 0);
-                _tabItem.last().css({ 'position': 'absolute', 'top': 0, 'right': 0 }).width(tabItemWidth);
+                tabItemWidth = parseInt((tabwidth - 5 * tiGap) / 5); //每個頁籤的寬度
+                _tabItem.width(tabItemWidth).css('margin-right', tiGap);
+                // _tabItem.first().css('margin-right', 0);
+                // _tabItem.last().css({ 'position': 'absolute', 'top': 0, 'right': 0 }).width(tabItemWidth);
             } else {
                 _tab.css('height', 'auto');
                 _tabItem.width(tabwidth);
-                _tabItem.css('margin-left', 0).last().css('position', 'relative');
+                _tabItem.css('margin-right', 0);
             }
             _tabItemA.focus(tabs);
             _tabItemA.click(tabs);
