@@ -111,6 +111,7 @@
         }
         &>a {
             display: block;
+            min-height: 45px;
             padding: 13px 0 12px;
             text-align: center;
             background-color: $primaryColor;
@@ -121,6 +122,10 @@
             // @include text-overflow;
             white-space: nowrap;
             overflow: visible;
+            line-height: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             @include box-sizing;
             @include screen('mobile') {
                 padding: 16px 0 14px;

@@ -506,7 +506,7 @@ $(function() {
     _window.resize(function() {
         clearTimeout(resizeTimer1);
         resizeTimer1 = setTimeout(function() {
-            ww = _window.outerWidth();
+            ww = _window.width();
             tabSet();
         }, 50);
     });
@@ -522,11 +522,12 @@ $(function() {
                 tiGap = 5,
                 tabItemLength = _tabItem.length, //有幾個頁籤
                 tabItemRows = parseInt(tabItemLength / 5) + 1, //頁籤有幾行
-                tabItemHeight = _tabItem.outerHeight() * tabItemRows, //頁籤的總高度
+                tabItemHeight = _tabItem.outerHeight(true) * tabItemRows, //頁籤的總高度
                 tabItemWidth;
             _tab.find('.active').next('.tabContent').show();
             if (ww >= wwSmall) {
-                _tabContent.css('top', tabItemHeight);
+                _tabContent.delay(1000).css('top', tabItemHeight);
+                // console.log(tabItemHeight);
                 _tab.height(tabContentHeight + tabItemHeight);
                 tabItemWidth = parseInt((tabwidth - 5 * tiGap) / 5); //每個頁籤的寬度
                 _tabItem.width(tabItemWidth).css('margin-right', tiGap);
