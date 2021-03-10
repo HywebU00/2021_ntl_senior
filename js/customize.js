@@ -17,9 +17,9 @@ $(function() {
     $(".picSlider").slick({
         dots: false
     });
-    $(".piclist  a").click(function(e) {
+    $(".piclist .pic a").click(function(e) {
         e.preventDefault();
-        slideIndex = $(this).index();
+        slideIndex = $(this).parent('.pic').index();
         $('.picSlider').slickGoTo(parseInt(slideIndex));
     });
 
