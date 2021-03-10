@@ -13,18 +13,16 @@ $(function() {
         lazyLoad: 'ondemand',
         ease: 'ease'
     });
-    $('.picSlider').slick({
-        mobileFirst: true,
-        dots: false,
-        arrow: true,
-        infinite: true,
-        speed: 500,
-        autoplay: true,
-        fade: true,
-        lazyLoaded: true,
-        lazyLoad: 'ondemand',
-        ease: 'ease'
+   
+    $(".picSlider").slick({
+        dots: false
     });
+    $(".piclist  a").click(function(e) {
+        e.preventDefault();
+        slideIndex = $(this).index();
+        $('.picSlider').slickGoTo(parseInt(slideIndex));
+    });
+
     $('.adSlider').slick({
         // mobileFirst: true,
         dots: false,
@@ -49,15 +47,13 @@ $(function() {
                     slidesToShow: 3,
                     slidesToScroll: 1,
                 }
-            }
-            , {
+            }, {
                 breakpoint: 767,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2
                 }
-            }
-            , {
+            }, {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
@@ -164,7 +160,7 @@ $(function() {
     $('.Slider-for').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false,
+        arrows: true,
         fade: true,
         swipe: false,
         swipeToSlide: false,

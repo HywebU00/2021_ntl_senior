@@ -401,6 +401,7 @@
     margin: 0 auto 30px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background-color: #fff;
+    border: 8px solid #fff;
     @include gutter(0);
     @include screen('mobile') {
         width: 100%;
@@ -412,7 +413,6 @@
         }
     }
     .img-container {
-        border: 8px solid #fff;
         position: relative;
         @include aspect-ratio(16, 9); //PC版比例
         overflow: visible;
@@ -420,19 +420,20 @@
             @include aspect-ratio(16, 9); //Mobile版比例
             overflow: visible;
         }
-        a {
-            .caption {
+        .caption {
+            position: absolute;
+            bottom: -3em;
+            height: 3em;
+            line-height: 3em;
+            color: #000;
+            background-color: #fff;
+            width: 100%;
+            text-align: center;
+            @include screen('tablet') {
                 bottom: -3em;
                 height: 3em;
-                line-height: 3em;
-                color: #000;
+                line-height: 2.5em;
                 background-color: #fff;
-                @include screen('tablet') {
-                    bottom: -3em;
-                    height: 3em;
-                    line-height: 2.5em;
-                    background-color: #fff;
-                }
             }
         }
     }
@@ -740,8 +741,7 @@
         background: none;
         margin-top: 0;
         border: none;
-        &:before,
-        &:after {
+        &:before, picSlider &:after {
             background: #FFF;
         }
     }
