@@ -8,7 +8,7 @@
     .fatfooter,
     footer,
     .accesskey,
-    .submenu {
+    .submenu, .function_panel .share, .function_panel .function {
         display: none;
     }
 
@@ -26,9 +26,13 @@
         max-width: 100% !important;
         width: 100% !important;
         @include gutter(0);
+         padding: 0!important;
     }
     .cp {
         @include gutter(0);
+        .pic{
+            float: none;
+        }
     }
     .innerpage {
         margin-top: 0 !important;
@@ -84,6 +88,10 @@
         }
         table {
             background: #FFF;
+            width: 100%!important;
+            th{
+                white-space: normal;
+            }
         }
         li {
             content: "» ";
