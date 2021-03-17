@@ -40,6 +40,7 @@ h1.title, h2.title {
     }
     table {
         background: #FFF;
+        margin-bottom: 20px;
         p {
             font-size: 1em;
             line-height: 1.45em;
@@ -75,6 +76,16 @@ h1.title, h2.title {
     a {
         @include aSetting;
     }
+
+   .cp_list{
+    dl{
+        margin:0 0 20px;
+        padding:0;
+        dt{
+            float: left;
+        }
+    }
+   } 
 }
 // 檔案下載
 .file_download {
