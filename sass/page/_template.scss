@@ -105,6 +105,9 @@ body {
     >.container {
         @include gutter(140px); //gutter 代表左右要留白
         display: flex;
+        @include screen('tablet'){
+            @include gutter(100px); //gutter 代表左右要留白
+        }
         @include screen('mobile') {
             @include gutter(50px);
         }
@@ -135,6 +138,7 @@ body {
         padding: 15px 0 10px;
         position: relative;
     }
+   
 }
 .hidden {
     display: none;
@@ -198,4 +202,8 @@ body {
             color: $secondaryColor;
         }
     }
+}
+.word_red{
+    color:$color-red;
+
 }

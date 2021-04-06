@@ -737,6 +737,7 @@ $(function() {
     /*-----------------------------------*/
     /////////// 無障礙快捷鍵盤組合  //////////
     /*-----------------------------------*/
+   
     $(document).on('keydown', function(e) {
         // alt+S 查詢
         if (e.altKey && e.keyCode == 83) {
@@ -759,6 +760,8 @@ $(function() {
             $('footer').find('.accesskey').focus();
         }
     });
+
+    //無障礙
     //無障礙切換slick箭頭語系
     if ($('html')[0].hasAttribute("labg")) {
         var weblang = $('html').attr('lang');

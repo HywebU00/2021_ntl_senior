@@ -7,14 +7,12 @@
         font-size: 1.25em;
         margin: 20px 0;
     }
-   
     .year_month {
         display: inline-block;
         vertical-align: middle;
         span {
             color: #990000;
             padding: 0 10px;
-            
             font-weight: 400;
             font-size: 1.5em;
             @media(max-width: 380px) {
@@ -26,18 +24,24 @@
         display: inline-block;
         vertical-align: middle;
         a {
-            display: block;
+            display: flex;
             width: 40px;
             height: 40px;
             background-color: #666;
             line-height: 40px;
             border-radius: 50%;
+            justify-content: center;
+            align-items: center;
             &:hover {
                 background-color: #000;
             }
             @media(max-width: 380px) {
                 width: 35px;
                 height: 35px;
+            }
+            img{
+                width: 12px;
+                height: 20px;
             }
         }
     }
@@ -77,7 +81,6 @@
         // @media(max-width:590px) {
         //     width: 95%;
         // }
-        
         li {
             display: inline-block;
             ;
@@ -125,7 +128,6 @@
                     background-color: #666;
                 }
             }
-            
         }
     }
 }
@@ -282,7 +284,6 @@
                             background-color: darken(#666, 15);
                         }
                     }
-                    
                 }
             }
         }
@@ -453,9 +454,9 @@
         }
         .book_leftblock {
             flex: none;
-            flex-basis: 220px;
+            flex-basis: 200px;
             .book {
-                width: 180px;
+                width: 170px;
                 padding: 10px;
                 background-color: #fff;
                 border: 1px solid #ccc;
@@ -480,7 +481,7 @@
         }
         .book_content {
             flex: none;
-            flex-basis: calc(100% - 220px);
+            flex-basis: calc(100% - 200px);
             @include screen('mobile') {
                 flex-basis: calc(100% - 170px);
             }
@@ -491,6 +492,7 @@
                 margin: 0 0 20px;
                 padding: 0;
                 color: $secondaryColor;
+                line-height: 1.3em;
                 a {
                     color: $secondaryColor;
                     &:hover {
@@ -504,13 +506,13 @@
                 list-style-type: none;
                 display: flex;
                 flex-wrap: wrap;
-                @include screen('mobile') {
+                @include screen('tablet') {
                     display: block;
                 }
                 li {
                     width: 50%;
                     margin: 0 0 15px;
-                    @include screen('mobile') {
+                    @include screen('tablet') {
                         width: 100%;
                     }
                     span {
@@ -620,5 +622,172 @@
             white-space: normal;
             line-height: 2em;
         }
+    }
+}
+.linkbtn {
+    color: #fff;
+    border-left: 5px solid $primaryColor;
+    display: inline-block;
+    a {
+        color: #fff;
+        display: block;
+        background-color: #000;
+        text-decoration: none;
+        padding: 10px 50px 10px 20px;
+        position: relative;
+        &:after {
+            content: '';
+            background-image: url('../images/basic/icon_link2.svg');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: 22px;
+            position: absolute;
+            right: 11px;
+            top: 10px;
+            width: 22px;
+            height: 22px;
+        }
+        &:hover {
+            background-color: $secondaryColor;
+            padding: 10px 60px 10px 20px;
+        }
+    }
+}
+// 場地資訊
+.site_data {
+    h3 {
+        font-size: 1.5em;
+        padding: 12px 0px 10px 0px;
+        margin: 0.5em 0em;
+        line-height: 1.6em;
+        color: $secondaryColor;
+    }
+    .site_Tb {
+        background-color: $secondaryColor;
+        border-radius: 3px;
+        padding: 30px;
+        color: #fff;
+        table {
+            border: none;
+            td, th {
+                padding: 25px 15px;
+                border: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+                vertical-align: top;
+                background-color: transparent;
+                color: #fff;
+            }
+            td {
+                ul {
+                    margin: 0;
+                    padding: 0;
+
+
+                    li {
+                        list-style-type: none;
+                        margin-bottom: 50px;
+                        line-height: 1.45em;
+                        padding:8px 20px;
+                        text-align:center;
+                        position: relative;
+                       background-color:darken($secondaryColor, 5);
+                        border-radius: 3px;
+                        &:after {
+                            content: '';
+                            background-image: url('../images/basic/icon_arrow_down.svg');
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            width: 26px;
+                            height: 26px;
+                            background-size: 20px;
+                            position: absolute;
+                            left: 50%;
+                            bottom:-40px;
+                            border-radius: 50%;
+                            background-color:#000;
+                        }
+                        &:last-child {
+                            &:after {
+                                display: none;
+                            }
+                        }
+                        a {
+                            color: #fff;
+                            text-decoration:underline;
+                            display: inline-block;
+                            
+                            padding:3px 15px;
+                            border-radius: 50px;
+                            margin:0 5px;
+                            &:hover {
+                                color: #fbf28a;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .site_data_link {
+            ul {
+                margin: 30px 0;
+                padding: 0;
+                li {
+                    margin: 0;
+                    padding: 0 0 0 15px;
+                    list-style-type: none;
+                    position: relative;
+                    &:before {
+                        content: '';
+                        border: 6px solid #fff;
+                        border-top-color: transparent;
+                        border-right-color: transparent;
+                        border-bottom-color: transparent;
+                        position: absolute;
+                        left: 10px;
+                        top: 16px;
+                    }
+                    a {
+                        display: block;
+                        padding: 10px;
+                        color: #fff;
+                        text-decoration: underline;
+                        &:hover {
+                            color: #fbf28a;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// 滿意回饋
+.give_back {
+    width: 70%;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding: 30px;
+    @include screen('tablet') {
+        width: 100%;
+    }
+    h3 {
+        color: $secondaryColor;
+        margin: 0 0 20px;
+        padding: 0;
+    }
+    .radio_grp {
+        margin: 0 0 15px;
+        input[type="radio"] {
+            margin-left: 0;
+        }
+    }
+    p{
+        line-height: 1.45em;
+
+    }
+    .btn_grp {
+        padding: 0;
     }
 }
