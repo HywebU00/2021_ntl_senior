@@ -769,6 +769,8 @@
     border-radius: 3px;
     border: 1px solid #ccc;
     padding: 30px;
+    clear: both;
+    margin:10px 0;
     @include screen('tablet') {
         width: 100%;
     }
